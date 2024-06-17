@@ -1,0 +1,124 @@
+.main-slider {
+  height: 100vh;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    right: 68.4rem;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    border-left: 1px solid rgba(#fff, .35);
+
+    transition: .4s ease-out;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 90;
+    left: 30.3rem;
+    height: 100%;
+    z-index: 10;
+    border-left: 1px solid rgba(#fff, .35);
+
+    transition: .4s ease-out;
+  }
+  &>.swiper-wrapper {
+    // position: static;
+    &::before {
+      content: "";
+      position: absolute;
+      right: 22rem;
+      top: 0;
+      height: 100%;
+      z-index: 10;
+      border-left: 1px solid rgba(#fff, .35);
+
+      transition: .4s ease-out;
+    }
+  }
+  &__pagination {
+    position: absolute;
+    z-index: 5;
+    right: unset !important;
+    top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transform: unset !important;
+    bottom: 4.5rem;
+    left: 12.2rem !important;
+    transition: border-color .3s ease-out;
+  }
+
+  &__bullet {
+    width: auto;
+    height: auto;
+    background: none;
+
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #fff;
+    position: relative;
+    transition: .3s ease-out;
+    &::before {
+      content: "";
+      position: absolute;
+      height: .1rem;
+      width: 2.5rem;
+      background-color: currentColor;
+      top: 50%;
+      right: calc(100% + 2rem);
+      transform: translateY(-50%);
+      transition: width .3s ease-out;
+    }
+    &.swiper-pagination-bullet-active {
+      &::before {
+        width: 20rem;
+      }
+    }
+  }
+
+}
+
+
+.main-slider.darken {
+  &::before, &::after {
+    border-color: rgba(#141414, 0.25);
+  }
+  &>.swiper-wrapper::before {
+    border-color: rgba(#141414, 0.25);
+  }
+  .header {
+    border-color: rgba(#141414, 0.25);
+  }
+  .header__logo svg {
+    fill: #141414;
+  }
+  .main-slider__pagination {
+    border-color: rgba(#141414, 0.25);
+  }
+  .main-slider__bullet {
+    color: #141414;
+  }
+
+  .menu-container {
+    border-color: rgba(#141414, 0.25);
+  }
+
+  .extra-content {
+    border-color: rgba(#141414, 0.25);
+  }
+
+  .menu__capture {
+    color: #141414;
+  }
+
+  .menu__mouse {
+    svg {
+      stroke: #141414;
+    }
+  }
+}
